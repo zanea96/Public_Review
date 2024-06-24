@@ -1,10 +1,10 @@
 //+------------------------------------------------------------------+
 //|                                 BeardedFX SpikeSmasher(B300).mq5 |
 //|                                             Created By BeardedFX |
-//|                                        https://www.BeardedFX.com |
+//|                                                                  |
 //+------------------------------------------------------------------+
 #property   copyright       "BeardedFX Copyright"
-#property   link            "https://www.beardedfx.com"
+#property   link            "Redacted"
 #property   version         "1.00"
 #property   description     "Created by BeardedFX"
 #property   description     "1 MIN TIMEFRAME SPIKE INDICATOR."
@@ -18,7 +18,7 @@
 //+------------------------------------------------------------------+
 //|                        Patch Notes                               |
 //+------------------------------------------------------------------+
-// 27.02.2024
+// 27.02.2021
 // [+]   Better Comments.
 // [+]   Accurate Spikesmasher Indicator Data.
 // [+]   Multiple Period Support(Stops bot from closing when switching timeframes).
@@ -32,7 +32,7 @@
 // [+]   Correct indicator arrows should be displayed on the Boom EA's.
 // [+]   Improve the accuracy of the SL and TP calculations.
 
-// 06.03.2024
+// 06.03.2021
 // [+]   The indicator data has been tested with real trades.
 // [+]   The issue with multiple trades has been resolved.
 // [+]   Only trades with the same magic number get closed.
@@ -142,8 +142,8 @@ int      Ma_Event130;                                                           
 int      Ma_Event230;                                                                                       // Stores RSI data to identify moving averages.
 double   Ma_Array1[],                                                                                       // Ma_Array1 gets created. Moving average array.
          Ma_Array2[];                                                                                       // Ma_Array2 gets created. Moving average array.
-color    colUptrend                 = clrLime,                                                            // The colour of the uptrend message.
-         colDowntrend               = clrRed;                                                             // The colour of the downtrend message.
+color    colUptrend                 = clrLime,                                                              // The colour of the uptrend message.
+         colDowntrend               = clrRed;                                                               // The colour of the downtrend message.
 
 bool     Ma_Event15                 = false;                                                                // False = Downtrend AND True = Uptrend
 bool     Ma_Event30                 = false;                                                                // False = Downtrend AND True = Uptrend
@@ -391,7 +391,7 @@ void ChartMessages()
       ObjectSetString(0,brand_name,OBJPROP_TEXT,"The Bearded Tech Copyright");                              // The text for the label.
       ObjectSetInteger(0,brand_name,OBJPROP_FONTSIZE,12);                                                   // The size of the font.
       ObjectSetString(0,brand_name,OBJPROP_FONT,"Arial");                                                   // The font for the label.
-      ObjectSetInteger(0,brand_name,OBJPROP_COLOR,White);                                                 // The colour of the text.
+      ObjectSetInteger(0,brand_name,OBJPROP_COLOR,White);                                                   // The colour of the text.
 
 
 //--- Product Activation Status                                                                             Comments
@@ -408,7 +408,7 @@ void ChartMessages()
       ObjectSetString(0,license_name,OBJPROP_TEXT,"Product Activated Successfully");                        // The text for the label.
       ObjectSetInteger(0,license_name,OBJPROP_FONTSIZE,8);                                                  // The size of the font.
       ObjectSetString(0,license_name,OBJPROP_FONT,"Arial");                                                 // The font for the label.
-      ObjectSetInteger(0,license_name,OBJPROP_COLOR,White);                                               // The colour of the text.
+      ObjectSetInteger(0,license_name,OBJPROP_COLOR,White);                                                 // The colour of the text.
  
  
    }
@@ -495,13 +495,13 @@ void Sty_Log()
    {  
       // Graphic Objects                                                                                    Comments
       ChartSetInteger(0, CHART_SHOW_GRID, false);                                                           // Show the grid on the chart. [True = Yes] and [False = No]
-      ChartSetInteger(0, CHART_COLOR_BACKGROUND, clrBlack);                                               // Set the colour backround of the chart to Black. 
-      ChartSetInteger(0, CHART_COLOR_FOREGROUND, clrWhite);                                               // Set the colour foreground to White.
+      ChartSetInteger(0, CHART_COLOR_BACKGROUND, clrBlack);                                                 // Set the colour backround of the chart to Black. 
+      ChartSetInteger(0, CHART_COLOR_FOREGROUND, clrWhite);                                                 // Set the colour foreground to White.
       ChartSetInteger(0, CHART_SHOW_VOLUMES, false);                                                        // Show the volumes on the chart. [True = Yes] and [False = No]
-      ChartSetInteger(0, CHART_COLOR_CANDLE_BULL, clrBlue);                                               // Set the Bullish candle's colour to Blue. 
-      ChartSetInteger(0, CHART_COLOR_CHART_UP, clrBlue);                                                  // Set the uptrend colour on the chart to Blue.
-      ChartSetInteger(0, CHART_COLOR_CANDLE_BEAR, clrLime);                                               // Set the Bearish candle's colour to Lime.
-      ChartSetInteger(0, CHART_COLOR_CHART_DOWN, clrLime);                                                // Set the downtrend colour on the chart to Lime.
+      ChartSetInteger(0, CHART_COLOR_CANDLE_BULL, clrBlue);                                                 // Set the Bullish candle's colour to Blue. 
+      ChartSetInteger(0, CHART_COLOR_CHART_UP, clrBlue);                                                    // Set the uptrend colour on the chart to Blue.
+      ChartSetInteger(0, CHART_COLOR_CANDLE_BEAR, clrLime);                                                 // Set the Bearish candle's colour to Lime.
+      ChartSetInteger(0, CHART_COLOR_CHART_DOWN, clrLime);                                                  // Set the downtrend colour on the chart to Lime.
    }
    
    
@@ -666,7 +666,7 @@ void DrawArrowOnPrice(int ArrowCode)
    
    ObjectCreate(0, Name, OBJ_ARROW, 0, arrowTime, Bid);                                                     // Create the arrow object.
    ObjectSetInteger(0, Name, OBJPROP_WIDTH, 2);                                                             // Set arrow width.
-   ObjectSetInteger(0, Name, OBJPROP_COLOR, clrSkyBlue);                                                  // Set arrow color.
+   ObjectSetInteger(0, Name, OBJPROP_COLOR, clrSkyBlue);                                                    // Set arrow color.
    ObjectSetInteger(0, Name, OBJPROP_ARROWCODE, ArrowCode);                                                 // 234 for Consolidation and 242 for Confirmation.
 
    ++IndicatorCount;
