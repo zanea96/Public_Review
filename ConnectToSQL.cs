@@ -114,7 +114,7 @@ class Connection_Details
                     connection.Open();
 
                     // Connection opened successfully.
-                    Console.WriteLine($"Connected to {cd.DatabaseName}.");
+                    Console.WriteLine($"Connected to {this.databaseName}.");
 
                     //* Perform your database operations here.
 
